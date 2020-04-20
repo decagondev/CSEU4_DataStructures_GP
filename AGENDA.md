@@ -4,7 +4,7 @@
 
 - Part 1 Homework: queue_and_stack
 
-- Part 2 In Class: No Starter. Interview problems described below.
+- Part 2 In Class: No Starter. Interview problems.
 
 - Part 2 Homework: lru_cache
 
@@ -29,8 +29,8 @@ This is what you should get out of this module.
 ## Day 1
 
 - Talk about Arrays
-- Talk about Linked Lists
 - 5 min break
+- Talk about Linked Lists
 - Implement a linked list
 - 5 min break
 - Talk About Stacks
