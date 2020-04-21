@@ -40,7 +40,7 @@ This is what you should get out of this module.
 ## Day 2
 
 - Quick recap linked lists
-- Interview Prep: Breakout rooms to solve linked list problem
+- Interview Prep: Breakout rooms to solve linked list problem (25 mins)
 - 5 min break
 - Queue and Stack Solution
 - More problem practice
