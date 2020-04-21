@@ -8,7 +8,7 @@
 
 - Part 2 Homework: lru_cache
 
-- Part 3 In Class: No Starter. Research and planning exercise below.
+- Part 3 In Class: No Starter. Research and planning exercise.
 
 - Part 3 Homework: binary_search_tree part 1
 
@@ -36,3 +36,14 @@ This is what you should get out of this module.
 - Talk About Stacks
 - Talk about Queues
 - Wrap Up
+
+## Day 2
+
+- Quick recap linked lists
+- Interview Prep: Breakout rooms to solve linked list problem
+- 5 min break
+- Queue and Stack Solution
+- More problem practice
+- 5 min break
+- More problems if time allows
+- wrap up
