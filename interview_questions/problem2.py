@@ -30,7 +30,7 @@ cur.add(12)
 cur = cur.next
 cur.add("Bob")
 cur = cur.next
-cur.add(34)
+cur.add(None)
 cur = cur.next
 cur.add(34)
 cur = cur.next
