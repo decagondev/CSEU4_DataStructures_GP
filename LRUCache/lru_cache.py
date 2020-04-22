@@ -23,8 +23,8 @@ class LRUCache:
     def get(self, key):
         # if the key exists in the storage
         if key in self.storage:
-            # extrapolate the node from the storage at the index of key
-            node = self.storage[key]
+            # extrapolate the node from the storage at the key of key
+            node = self.storage[key] # extrapolate the tuple / pair from the sturage
             # move the node to the end of the order list
             self.order.move_to_end(node)
             # return the value from the node
@@ -51,7 +51,7 @@ class LRUCache:
             # extrapolate the node from the storage at the index of key
             node = self.storage[key]
             # set the nodes value to the (key, value) pair
-            node.value = (key, value)
+            node.value = (key, value) # node = ("bob", val) <= ("bob", 45)
             # move the node to the end of the order list
             self.order.move_to_end(node)
             # just return from the method
