@@ -1,3 +1,4 @@
+from doubly_linked_list import DoublyLinkedList
 class LRUCache:
     """
     Our LRUCache class keeps track of the max number of nodes it
@@ -7,13 +8,10 @@ class LRUCache:
     to every node stored in the cache.
     """
     def __init__(self, limit=10):
-        # fields
-        # limit
-        # size
-        # order
-        # storage
-
-        pass
+        self.limit = limit
+        self.size = 0
+        self.order = DoublyLinkedList()
+        self.storage = dict()
 
     """
     Retrieves the value associated with the given key. Also
@@ -24,12 +22,17 @@ class LRUCache:
     """
     def get(self, key):
         # if the key exists in the storage
+        if key in self.storage:
             # extrapolate the node from the storage at the index of key
+            node = self.storage[key]
             # move the node to the end of the order list
+            self.order.move_to_end(node)
             # return the value from the node
+            return node.value[1]
         # otherwise
+        else:
             # return None
-        pass
+            return None
 
     """
     Adds the given key-value pair to the cache. The newly-
@@ -43,16 +46,31 @@ class LRUCache:
     """
     def set(self, key, value):
         # if the key exists in the storage
+        # if the key exists in the storage
+        if key in self.storage:
             # extrapolate the node from the storage at the index of key
+            node = self.storage[key]
             # set the nodes value to the (key, value) pair
+            node.value = (key, value)
             # move the node to the end of the order list
+            self.order.move_to_end(node)
             # just return from the method
+            return
         # if the size is equal to the limit
+        if self.size == self.limit:
             # delete the storage entry at the key from the order lists head
+            # head = self.order.head
+            # val = head.value
+            # k = val[0]
+            del self.storage[self.order.head.value[0]]
             # remove the head of the order
+            self.order.remove_from_head()
             # decrement the size
+            self.size -= 1
         
         # add the (key, value) pair to the tail of the order
+        self.order.add_to_tail((key, value))
         # set the storage at the key to the order tail
+        self.storage[key] = self.order.tail
         # increment the size
-        pass
+        self.size += 1
