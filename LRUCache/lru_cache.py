@@ -7,6 +7,12 @@ class LRUCache:
     to every node stored in the cache.
     """
     def __init__(self, limit=10):
+        # fields
+        # limit
+        # size
+        # order
+        # storage
+
         pass
 
     """
@@ -17,6 +23,12 @@ class LRUCache:
     key-value pair doesn't exist in the cache.
     """
     def get(self, key):
+        # if the key exists in the storage
+            # extrapolate the node from the storage at the index of key
+            # move the node to the end of the order list
+            # return the value from the node
+        # otherwise
+            # return None
         pass
 
     """
@@ -30,4 +42,17 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
+        # if the key exists in the storage
+            # extrapolate the node from the storage at the index of key
+            # set the nodes value to the (key, value) pair
+            # move the node to the end of the order list
+            # just return from the method
+        # if the size is equal to the limit
+            # delete the storage entry at the key from the order lists head
+            # remove the head of the order
+            # decrement the size
+        
+        # add the (key, value) pair to the tail of the order
+        # set the storage at the key to the order tail
+        # increment the size
         pass
