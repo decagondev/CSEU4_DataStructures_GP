@@ -9,55 +9,119 @@ class BinarySearchTree:
 
     # Insert the given value into the tree
     def insert(self, value):
-        # check if new nodes value is less than out current nodes value
+        # check if new nodes value is less than our current nodes value
+        if value < self.value:
             # if there is no left child already here
+            if not self.left:
                 # place a new bst with the value passed in to the left
+                self.left = BinarySearchTree(value)
             # otherwise
+            else:
                 # repeat the process recursively on the left
-        
-        # else if the value is greater than or equal to the current nodes value
+                self.left.insert(value)
+
+        # check if new nodes value is greater than or equal to our current nodes value
+        if value >= self.value:
             # if there is no right child already here
+            if not self.right:
                 # place a new bst with the value passed in to the right
+                self.right = BinarySearchTree(value)
             # otherwise
+            else:
                 # repeat the process recursively on the right
+                self.right.insert(value)
 
-        # Return True if the tree contains the value
-        # False if it does not
-        pass
-
+    # Return True if the tree contains the value
+    # False if it does not
     def contains(self, target):
         # base case. if value matches current target
+        if self.value == target:
             # return True
+            return True
 
         # if target less than value 
-            # check left child recursively
+        if target < self.value:
+            # check left child recursively      
             # if no left child
+            if not self.left:
                 # return false
+                return False
             # otherwise
+            else:
                 # call contains on the left
+                return self.left.contains(target)
         # otherwise
+        else:
             # check right child recursively
             # if no right child
+            if not self.right:
                 # return false
+                return False
             # otherwise
+            else:
                 # call contains on the right
-        pass
+                return self.right.contains(target)
 
     # Return the maximum value found in the tree
     def get_max(self):
-        pass
+        # if tree empty return false
+        if not self:
+            return None
+        
+        # Rodrigos iterative approach
+        # while self.right:
+        #     self = self.right
+        
+        # return self.value
+
+        # recursive approach
+        # if there is no right child
+        if not self.right:
+            # return the value
+            return self.value
+        
+        # recursive case
+        # call get max on the right child
+        return self.right.get_max()
+
+        # TODO: iterative approach
+        # # init a max val variable
+        # max_val = self.value
+        
+        # # take ref to current node
+        # current = self
+
+        # # while current node exists
+        # while current:
+        #     # check if current val is greather than max val
+        #     if current.value > max_val:
+        #         # set max val to current val
+        #         max_val = current.value
+            
+        #     # move to the next right node
+        #     current = current.right
+            
+
+        # # return max val
+        # return max_val
+
+
 
     # Call the function `cb` on the value of each node
     # You may use a recursive or iterative approach
     def for_each(self, cb):
         # do the call back using self.value as the parameter
+        cb(self.value)
 
         # if left exists
+        if self.left:
             # call foreach on left
+            self.left.for_each(cb)
 
         # if right exists
+        if self.right:
             # call foreach on right
-        pass
+            self.right.for_each(cb)
 
     # DAY 2 Project -----------------------
 
